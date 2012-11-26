@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# customize for your needs in terms of format, and dvd device:
+DVD_DEV=/dev/dvd
+
+# options for output FORMAT:
+#    raw = mp3
+#    ogg = ogg/vorbis
+#    wav = wav
+FORMAT=raw
+
+# output file name
+OUTFILE=complete_audio.mp3
+
+if [ "${1}x" != "x" ]
+then
+	OUTFILE=$1
+fi
+
+transcode -i $DVD_DEV -x dvd -T 1,-1 -a 0 -y $FORMAT -m $OUTFILE
