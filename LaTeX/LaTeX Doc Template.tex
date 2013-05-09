@@ -1,0 +1,199 @@
+% !TEX TS-program = pdflatex
+% !TEX encoding = UTF-8 Unicode
+
+% This is a simple template for a LaTeX document using the "article" class.
+% See "book", "report", "letter" for other types of document.
+
+\documentclass[11pt]{article} % use larger type; default would be 10pt
+
+\usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
+
+%%% Examples of Article customizations
+% These packages are optional, depending whether you want the features they provide.
+% See the LaTeX Companion or other references for full information.
+
+%%% PAGE DIMENSIONS
+\usepackage{geometry} % to change the page dimensions
+\geometry{margin=1in} % or letterpaper (US) or a5paper or....
+% \geometry{margin=2in} % for example, change the margins to 2 inches all round
+% \geometry{landscape} % set up the page for landscape
+%   read geometry.pdf for detailed page layout information
+
+\usepackage{graphicx} % support the \includegraphics command and options
+
+% \usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
+
+%%% PACKAGES
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+\usepackage{lastpage} % for \lastpage ref
+\usepackage{color, colortbl}
+\usepackage{xcolor}
+\usepackage[normalem]{ulem}
+\usepackage[hyphens]{url}
+\usepackage[pdftex]{hyperref}
+\usepackage{color, colortbl}
+\usepackage{xcolor}
+\usepackage{hhline}
+
+\newcommand*\setfgcolor[1]{\gdef\fgcolor{#1}}
+
+\definecolor{Gray}{gray}{0.5}
+\definecolor{Black}{rgb}{0,0,0}
+\definecolor{White}{rgb}{1,1,1}
+% These packages are all incorporated in the memoir class to one degree or another...
+\setfgcolor{Black}
+
+\hypersetup{
+	colorlinks	= true,	 %Colors links instead of ugly boxes
+	urlcolor	= blue,  %Color for external hyperlinks
+	linkcolor	= black, %Color of internal links
+	citecolor	= red 	 %Color of citations
+}
+
+\providecommand{\tabularnewline}{\\}
+
+%%% HEADERS & FOOTERS
+\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+\pagestyle{fancy} % options: empty , plain , fancy
+\fancypagestyle{mystyle}
+{
+	\newgeometry{margin=1in, bottom=1in, top=1in}
+	\fancyhfoffset{0pt}
+	\footskip 30.0pt
+	\raggedright
+	\renewcommand\headrulewidth{0pt}
+	\fancyhead{}
+	\fancyfoot{}
+	\fancyfoot[L]{}
+	\fancyfoot[C]{\footnotesize Page \thepage\ of \pageref{LastPage} }
+	\fancyfoot[R]{}
+}
+
+%%% SECTION TITLE APPEARANCE
+%%% END Article customizations
+
+\setlength{\parindent}{0in}
+
+%%% The "real" document content comes below...
+
+\title{\LaTeX Document Template}
+\author{Bill Crossley}
+%\date{} % Activate to display a given date or no date (if empty),
+         % otherwise the current date is printed 
+
+\begin{document}
+
+\begin{titlepage}
+\vfill
+\maketitle
+\thispagestyle{empty}
+\vfill
+\end{titlepage}
+
+\pagestyle{mystyle}
+
+\tableofcontents{}
+
+\pagebreak
+
+\section{Overview}
+
+Overview text goes here
+
+\section{Some Section Title}
+
+Some paragraph.\\
+\bigskip
+Last Paragraph.
+
+\section{Some Other Section Title}
+
+Section with other content.
+
+\subsection{Sub-section title}
+
+Sub-section content.
+
+\subsubsection{Sub-Sub-Section title}
+
+Let's not get TOO carried away here...
+
+\paragraph{Interesting Paragraph Thing:}Content of interesting paragraph thing.
+
+\pagebreak
+
+\section{Nifty Examples}
+
+\subsection{Itemized List}
+This is how to do a bulleted list.
+
+\begin{itemize}
+\item One
+\item Two
+\item Five
+\item Three, Sir!
+\item Three!
+\end{itemize}
+
+\subsection{Numbered List}
+
+\begin{enumerate}
+\item some content
+\item some more content
+\item some content with a sub-list
+	\begin{enumerate}
+	\item sub thing
+		\begin{enumerate}
+		\item sub-sub thing
+		\end{enumerate}
+	\item sub thingy
+	\end{enumerate}
+\item neat, huh?
+\end{enumerate}
+
+\subsection{A Descriptive List}
+
+The source for this section shows how to make something called a \emph{descriptive list}.
+
+\begin{description}
+\item [Italics]
+This is how you make text appear in {\it italics}.  Another way that allows nesting: {\em This is in italics \em but this isn't \em and this is again}.
+\item [Bold]
+This is how you make a text appear in {\bf bold}.  {\bf \em bold \em and \em italics}? You betcha.
+\item[Underline]
+Want to \uline{underline} stuff?
+	\begin{description}
+	\item [Twice] \uuline{Twice}? 
+	\item [Squiggly] \uwave{Squiggly}? 
+	\item [Strikeout] \sout{Nope}.
+	\item [Slashout] \xout{Removed}. 
+	\item [Dashing] \dashuline{Dashing}! 
+	\item [Dotty] \dotuline{Dotty}.
+	\end{description}
+\end{description}
+
+Of course, different list types can be nested within each other, too.
+
+\subsection{Table}
+
+Here's how to make a nice table.\\
+\bigskip
+% table format: first colum is left aligned, 2nd colum is centered, 3rd is paragraph aligned, fixed size
+\begin{tabular}{|l|c|p{11cm}|}
+\hline
+% column headings
+\rowcolor{Gray} Col 1 & Col 2 & Col 3\tabularnewline
+\hline
+Col 1 text & Col 2 text & The text for colum number 3, first row.\tabularnewline
+\hline
+Row 2, Col 1 & Row 2, Col 2 & Col 3 text for row 2 - see where this is going?
+\tabularnewline
+\hline
+\end{tabular}
+
+
+\end{document}
